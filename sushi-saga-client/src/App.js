@@ -7,6 +7,9 @@ const API = "http://localhost:3000/sushis"
 
 class App extends Component {
 
+  state={
+    
+  }
   render() {
     return (
       <div className="app">
