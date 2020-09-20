@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Create from '../components/Create'
 
 const Table = (props) => {
 
@@ -11,7 +12,7 @@ const Table = (props) => {
   return (
     <Fragment>
       <h1 className="remaining">
-        You have: ${ /* Give me how much money I have left */ } remaining!
+        You have: ${props.cash} remaining!
       </h1>
       <div className="table">
         <div className="stack">
@@ -24,6 +25,7 @@ const Table = (props) => {
             renderPlates([])
           }
         </div>
+        <Create addCash={props.addCash}/>
       </div>
     </Fragment>
   )
