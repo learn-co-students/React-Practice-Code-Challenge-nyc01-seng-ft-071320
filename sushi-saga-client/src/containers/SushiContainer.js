@@ -12,7 +12,7 @@ const SushiContainer = (props) => {
     <Fragment>
       <div className="belt">
         {genFourSushis()}
-        <MoreButton />
+        <MoreButton renderMoreSushi={props.renderMoreSushi}/>
       </div>
     </Fragment>
   )

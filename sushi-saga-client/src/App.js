@@ -23,11 +23,19 @@ class App extends Component {
     })
   }
 
+  renderMoreSushi = e => {
+    e.persist()
+    this.setState(() => ({
+      startIndex: this.state.startIndex + 4,
+      endIndex: this.state.endIndex + 4
+    }))
+  }
+
   render() {
     const fourSushis = this.state.sushis.slice(this.state.startIndex, this.state.endIndex)
     return (
       <div className="app">
-        <SushiContainer sushis={fourSushis} />
+        <SushiContainer sushis={fourSushis} renderMoreSushi={this.renderMoreSushi}/>
         <Table />
       </div>
     );
