@@ -11,7 +11,7 @@ class App extends Component {
     sushis: [],
     startIndex: 0,
     endIndex: 4,
-    balance: 500,
+    balance: 100,
     eatenSushis: []
   }
 
@@ -46,7 +46,7 @@ class App extends Component {
     const fourSushis = this.state.sushis.slice(this.state.startIndex, this.state.endIndex)
     return (
       <div className="app">
-        <SushiContainer sushis={fourSushis} renderMoreSushi={this.renderMoreSushi} addEatenSushi={this.addEatenSushi}/>
+        <SushiContainer sushis={fourSushis} renderMoreSushi={this.renderMoreSushi} addEatenSushi={this.addEatenSushi} balance={this.state.balance}/>
         <Table balance={this.state.balance} eatenSushis={this.state.eatenSushis}/>
       </div>
     );

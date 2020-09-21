@@ -6,11 +6,13 @@ class Sushi extends React.Component {
   }
 
   removeSushi = e => {
-    this.props.addEatenSushi(e, this.props.sushi)
-    e.persist(e)
-    this.setState(() => ({
-      eaten: true
-    }))
+    if (this.props.balance >= this.props.sushi.price) {
+      this.props.addEatenSushi(e, this.props.sushi)
+      e.persist(e)
+      this.setState(() => ({
+        eaten: true
+      }))
+    }
   }
 
   render() {
