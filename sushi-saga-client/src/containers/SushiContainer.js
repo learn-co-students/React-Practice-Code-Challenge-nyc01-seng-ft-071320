@@ -5,7 +5,7 @@ import Sushi from '../components/Sushi'
 const SushiContainer = (props) => {
 
   const genFourSushis = () => {
-    return props.sushis.map(sushi => <Sushi key={sushi.id} sushi={sushi}/>)
+    return props.sushis.map(sushi => <Sushi key={sushi.id} sushi={sushi} addEatenSushi={props.addEatenSushi}/>)
   }
 
   return (

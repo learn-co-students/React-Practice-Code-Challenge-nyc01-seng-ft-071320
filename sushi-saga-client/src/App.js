@@ -10,7 +10,9 @@ class App extends Component {
   state = {
     sushis: [],
     startIndex: 0,
-    endIndex: 4
+    endIndex: 4,
+    balance: 500,
+    eatenSushis: []
   }
 
   componentDidMount() {
@@ -31,12 +33,20 @@ class App extends Component {
     }))
   }
 
+  addEatenSushi = (e, sushiObj) => {
+    e.persist()
+    const newSushis = [sushiObj, ...this.state.eatenSushis]
+    this.setState(()=> ({
+      eatenSushis: newSushis
+    }))
+  }
+
   render() {
     const fourSushis = this.state.sushis.slice(this.state.startIndex, this.state.endIndex)
     return (
       <div className="app">
-        <SushiContainer sushis={fourSushis} renderMoreSushi={this.renderMoreSushi}/>
-        <Table />
+        <SushiContainer sushis={fourSushis} renderMoreSushi={this.renderMoreSushi} addEatenSushi={this.addEatenSushi}/>
+        <Table balance={this.state.balance} eatenSushis={this.state.eatenSushis}/>
       </div>
     );
   }
