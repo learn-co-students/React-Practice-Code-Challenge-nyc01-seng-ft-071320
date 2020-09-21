@@ -37,7 +37,8 @@ class App extends Component {
     e.persist()
     const newSushis = [sushiObj, ...this.state.eatenSushis]
     this.setState(()=> ({
-      eatenSushis: newSushis
+      eatenSushis: newSushis,
+      balance: this.state.balance - sushiObj.price
     }))
   }
 
