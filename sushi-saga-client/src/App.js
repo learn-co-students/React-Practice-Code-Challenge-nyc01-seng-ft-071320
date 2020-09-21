@@ -33,8 +33,6 @@ class App extends Component {
 
   renderMoreSushi = e => {
     e.persist()
-    // console.log(this.state.sushis.slice(96,99))
-    // console.log(this.state.startIndex, this.state.endIndex, 4*(this.state.numOfSushi/4-1))
     if (this.state.startIndex < this.state.numOfSushi - 4) {
       const newEndIndex = this.state.endIndex + 4 > this.state.maxIndex ? this.state.maxIndex : this.state.endIndex + 4
       this.setState(() => ({
@@ -79,7 +77,6 @@ class App extends Component {
 
   render() {
     const fourSushis = this.state.sushis.slice(this.state.startIndex, this.state.endIndex)
-    console.log("start ", this.state.startIndex, "end ", this.state.endIndex, fourSushis, "max ", this.state.maxIndex, "len ", this.state.numOfSushi)
     return (
       <div className="app">
         <SushiContainer sushis={fourSushis} renderMoreSushi={this.renderMoreSushi} addEatenSushi={this.addEatenSushi} balance={this.state.balance}/>
